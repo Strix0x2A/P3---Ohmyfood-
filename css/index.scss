@@ -1,0 +1,259 @@
+$color-primary: #9356DC;
+$color-primary-lighter: rgba($color-primary, 0.10);
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-tertiary-darker: rgb(0, 118, 84);
+$color-gray-lighter: #f6f6f6;
+$color-gray: #eaeaea;
+$color-gray-darker: #636363;
+$color-font: rgba(black, 0.85);
+$color-footer: #343434;
+$shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+html {
+	font-family: Roboto;
+	color: $color-font;
+	
+	body {
+		margin: 0px;
+		width: 100%;
+		
+		header {
+			height: 75px;
+			width: 100%;
+			box-shadow: $shadow;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+				
+		main {
+			button {
+				border: none;
+				background-color: none;
+			}
+			
+			h1 {
+				font-weight: 700;
+			}
+			
+			.content {
+				padding: 25px;
+			}
+
+			.locator {
+				background-color: $color-gray;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: 500;
+
+				.icons {
+					width: 30px;
+					height: 30px;
+					background: $color-footer;
+					margin-right: 15px;
+				}
+			}
+			
+			.catch-phrase {
+				background-color: $color-gray-lighter;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+
+				.secondary {
+					font-size: 130%;
+					font-weight: 300;
+					margin-bottom: 20px;
+				}
+
+				.call-to-action {
+					margin: 30px;
+					height: 60px;
+					border-radius: 30px;
+					padding: 15px 25px 15px 25px;
+					background-color: $color-secondary;
+					color: white;
+					font-size: large;
+					margin-bottom: 60px;
+				}
+
+				.call-to-action:hover {
+					background-color: $color-primary;
+				}
+			}
+
+			.functionning {
+				.card {
+					box-shadow: $shadow;
+					height: 50px;
+					border-radius: 25px;;
+					display: flex;
+					align-items: center;
+					font-size: large;
+					font-weight: 500;
+					padding: 25px;
+					margin: 25px 0px;
+					margin-left: 20px;
+					position: relative;
+
+					.order-num {
+						position: absolute;
+						top: 35px;
+						left: -15px;
+						width: 30px;
+						height: 30px;
+						border-radius: 100%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						color: white;
+						background-color: $color-primary;
+					}
+
+					.icons {
+						background-color: $color-gray-darker;
+						height: 30px;
+						width: 30px;
+						margin-right: 15px;
+					}
+					
+					.last {
+						background-color: $color-primary;
+					}
+				}
+
+				.last {
+					background-color: $color-primary-lighter;
+				}
+			}
+
+			.restaurants {
+				background-color: $color-gray-lighter;
+				
+				.result-card {
+					background-color: white;
+					border-radius: 20px;
+					margin-bottom: 25px;
+					box-shadow: $shadow;
+					position: relative;
+
+					img {
+						border-top-left-radius: 20px;
+						border-top-right-radius: 20px;
+						object-fit: cover;
+						width: 100%;
+						height: 200px;
+						z-index: 1;
+					}
+
+					.new-restaurant {
+						position: absolute;
+						top: 15px;
+						right: 15px;
+						height: 30px;
+						width: 100px;
+						border-radius: 3px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						background-color: $color-tertiary;
+						color: $color-tertiary-darker;
+					}
+
+					.wrapper {
+						padding: 17px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						button {
+							border: solid 2px $color-secondary;
+							background-color: white;
+							width: 20px;
+							height: 20px;
+							border-radius: 100%;
+						}
+
+						button:hover {
+							background-color: $color-secondary;
+						}
+
+						.favorite {
+							background-color: $color-secondary;
+						}
+
+						.description {
+							
+							.name {
+								font-weight: bold;
+								font-size: 140%;
+							}
+							
+							.location {
+								font-size: 120%;
+								margin-top: 17px;
+								margin-bottom: 7px;
+							}
+						}
+					}
+
+				}
+
+				.result-card:hover {
+					box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+				}
+			}
+
+			footer {
+				background-color: $color-footer;
+				color: white;
+				width: 100%;
+				height: 250px;
+
+				.logo {
+					margin: 25px;
+				}
+
+				.part {
+					margin: 10px 25px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.functionning {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		& h1 {
+			flex: 0 0 100%;
+		}
+
+		.card {
+			width: 26%;
+			min-width: 250px;
+		}
+	}
+	
+	.restaurants {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	
+		& h1 {
+			flex: 0 0 100%;
+		}
+
+		.result-card {
+			width: 24%;
+		}
+	}
+}

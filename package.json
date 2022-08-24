@@ -1,0 +1,19 @@
+{
+  "name": "p3-ohmyood",
+  "version": "1.0.0",
+  "description": "OpenClassrooms - Parcours Dev Web React et Javascript - Projet 3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./css/index.scss:./css/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strix0x2A/P3-Ohmyfood.git"
+  },
+  "author": "clbergon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strix0x2A/P3-Ohmyfood/issues"
+  },
+  "homepage": "https://github.com/Strix0x2A/P3-Ohmyfood#readme"
+}

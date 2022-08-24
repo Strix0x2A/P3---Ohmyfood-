@@ -1,0 +1,206 @@
+html {
+  font-family: Roboto;
+  color: rgba(0, 0, 0, 0.85);
+}
+html body {
+  margin: 0px;
+  width: 100%;
+}
+html body header {
+  height: 75px;
+  width: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body main button {
+  border: none;
+  background-color: none;
+}
+html body main h1 {
+  font-weight: 700;
+}
+html body main .content {
+  padding: 25px;
+}
+html body main .locator {
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+html body main .locator .icons {
+  width: 30px;
+  height: 30px;
+  background: #343434;
+  margin-right: 15px;
+}
+html body main .catch-phrase {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+html body main .catch-phrase .secondary {
+  font-size: 130%;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+html body main .catch-phrase .call-to-action {
+  margin: 30px;
+  height: 60px;
+  border-radius: 30px;
+  padding: 15px 25px 15px 25px;
+  background-color: #FF79DA;
+  color: white;
+  font-size: large;
+  margin-bottom: 60px;
+}
+html body main .catch-phrase .call-to-action:hover {
+  background-color: #9356DC;
+}
+html body main .functionning .card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  font-size: large;
+  font-weight: 500;
+  padding: 25px;
+  margin: 25px 0px;
+  margin-left: 20px;
+  position: relative;
+}
+html body main .functionning .card .order-num {
+  position: absolute;
+  top: 35px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #9356DC;
+}
+html body main .functionning .card .icons {
+  background-color: #636363;
+  height: 30px;
+  width: 30px;
+  margin-right: 15px;
+}
+html body main .functionning .card .last {
+  background-color: #9356DC;
+}
+html body main .functionning .last {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+html body main .restaurants {
+  background-color: #f6f6f6;
+}
+html body main .restaurants .result-card {
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+}
+html body main .restaurants .result-card img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+}
+html body main .restaurants .result-card .new-restaurant {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 30px;
+  width: 100px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  color: rgb(0, 118, 84);
+}
+html body main .restaurants .result-card .wrapper {
+  padding: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+html body main .restaurants .result-card .wrapper button {
+  border: solid 2px #FF79DA;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+html body main .restaurants .result-card .wrapper button:hover {
+  background-color: #FF79DA;
+}
+html body main .restaurants .result-card .wrapper .favorite {
+  background-color: #FF79DA;
+}
+html body main .restaurants .result-card .wrapper .description .name {
+  font-weight: bold;
+  font-size: 140%;
+}
+html body main .restaurants .result-card .wrapper .description .location {
+  font-size: 120%;
+  margin-top: 17px;
+  margin-bottom: 7px;
+}
+html body main .restaurants .result-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+html body main footer {
+  background-color: #343434;
+  color: white;
+  width: 100%;
+  height: 250px;
+}
+html body main footer .logo {
+  margin: 25px;
+}
+html body main footer .part {
+  margin: 10px 25px;
+}
+
+@media screen and (min-width: 1024px) {
+  .functionning {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .functionning h1 {
+    flex: 0 0 100%;
+  }
+  .functionning .card {
+    width: 26%;
+    min-width: 250px;
+  }
+  .restaurants {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .restaurants h1 {
+    flex: 0 0 100%;
+  }
+  .restaurants .result-card {
+    width: 24%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
