@@ -1,6 +1,21 @@
 html {
   font-family: Roboto;
   color: rgba(0, 0, 0, 0.85);
+  min-width: 320px;
+}
+html button {
+  border: none;
+  background: transparent;
+}
+html h1 {
+  font-weight: 700;
+}
+html a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.85);
+}
+html a:visited {
+  color: rgba(0, 0, 0, 0.85);
 }
 html body {
   margin: 0px;
@@ -12,16 +27,39 @@ html body header {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
-html body main button {
-  border: none;
+html body header .logo {
+  margin: auto;
 }
-html body main h1 {
-  font-weight: 700;
+html body header .home .icon {
+  font-size: 24px;
+  margin-left: 24px;
+  margin-right: -48px;
 }
 html body main .content {
   padding: 25px;
+}
+html body main .favorite-action {
+  border: solid 2px #FF79DA;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+html body main .favorite-action:hover {
+  background-color: #FF79DA;
+}
+html body main .favorite {
+  background-color: #FF79DA;
+}
+html body main .card {
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+html body main .result-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 html body main .locator {
   background-color: #eaeaea;
@@ -50,9 +88,9 @@ html body main .catch-phrase .secondary {
 }
 html body main .catch-phrase .call-to-action {
   margin: 30px;
-  height: 60px;
-  border-radius: 30px;
-  padding: 15px 25px 15px 25px;
+  min-height: 60px;
+  border-radius: 35px;
+  padding: 16px 24px 16px 24px;
   background-color: #FF79DA;
   color: white;
   font-size: large;
@@ -62,15 +100,13 @@ html body main .catch-phrase .call-to-action:hover {
   background-color: #9356DC;
 }
 html body main .functionning .card {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   height: 50px;
-  border-radius: 25px;
   display: flex;
   align-items: center;
   font-size: large;
   font-weight: 500;
-  padding: 25px;
-  margin: 25px 0px;
+  padding: 24px;
+  margin: 24px 0px;
   margin-left: 20px;
   position: relative;
 }
@@ -103,15 +139,12 @@ html body main .restaurants {
   background-color: #f6f6f6;
 }
 html body main .restaurants .result-card {
-  background-color: white;
-  border-radius: 20px;
-  margin-bottom: 25px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   position: relative;
+  margin-bottom: 24px;
 }
 html body main .restaurants .result-card img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
   object-fit: cover;
   width: 100%;
   height: 200px;
@@ -119,8 +152,8 @@ html body main .restaurants .result-card img {
 }
 html body main .restaurants .result-card .new-restaurant {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 16px;
+  right: 16px;
   height: 30px;
   width: 100px;
   border-radius: 3px;
@@ -136,19 +169,6 @@ html body main .restaurants .result-card .wrapper {
   justify-content: space-between;
   align-items: center;
 }
-html body main .restaurants .result-card .wrapper button {
-  border: solid 2px #FF79DA;
-  background-color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-}
-html body main .restaurants .result-card .wrapper button:hover {
-  background-color: #FF79DA;
-}
-html body main .restaurants .result-card .wrapper .favorite {
-  background-color: #FF79DA;
-}
 html body main .restaurants .result-card .wrapper .description .name {
   font-weight: bold;
   font-size: 140%;
@@ -158,8 +178,83 @@ html body main .restaurants .result-card .wrapper .description .location {
   margin-top: 17px;
   margin-bottom: 7px;
 }
-html body main .restaurants .result-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+html body main .restaurant-detail img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+}
+html body main .restaurant-detail .menu {
+  margin-top: -32px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: white;
+  height: max-content;
+  z-index: 2;
+}
+html body main .restaurant-detail .menu .name {
+  font-family: Shrikhand;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body main .restaurant-detail .menu .section {
+  margin-bottom: 36px;
+}
+html body main .restaurant-detail .menu .section .title {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+html body main .restaurant-detail .menu .section .separator {
+  height: 3px;
+  width: 42px;
+  margin-bottom: 16px;
+  background-color: #99E2D0;
+}
+html body main .restaurant-detail .menu .section .result-card {
+  padding: 12px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  transform: translateY(12px);
+  overflow: hidden;
+  opacity: 0;
+}
+html body main .restaurant-detail .menu .section .result-card.first {
+  animation: fadeIn 400ms ease-in 400ms forwards, slideIn 1s ease 400ms forwards;
+}
+html body main .restaurant-detail .menu .section .result-card.second {
+  animation: fadeIn 400ms ease-in 600ms forwards, slideIn 1s ease 600ms forwards;
+}
+html body main .restaurant-detail .menu .section .result-card.third {
+  animation: fadeIn 400ms ease-in 800ms forwards, slideIn 1s ease 800ms forwards;
+}
+html body main .restaurant-detail .menu .section .result-card .dish-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+html body main .restaurant-detail .menu .section .result-card .dish-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 90%;
+}
+html body main .restaurant-detail .menu .section .result-card .dish-info .garnish {
+  font-weight: 300;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+html body main .restaurant-detail .menu .section .result-card .dish-info .price {
+  font-weight: 500;
+}
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  100% {
+    transform: translateY(0);
+  }
 }
 html body main footer {
   background-color: #343434;
@@ -199,6 +294,19 @@ html body main footer .part {
   }
   .restaurants .result-card {
     width: 24%;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .menu .name {
+    flex: 0 0 100%;
+  }
+  .menu .section {
+    width: 29%;
+    min-width: 250px;
   }
 }
 
