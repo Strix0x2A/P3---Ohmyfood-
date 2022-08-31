@@ -269,51 +269,89 @@ html {
 						}
 
 						.result-card {
-							padding: 12px;
+							height: 62px;
 							border-radius: 16px;
 							margin-bottom: 12px;
 							transform: translateY(12px);
 							overflow: hidden;
 							opacity: 0;
+							display: flex;
+							justify-content: start;
+							align-items: center;
 							
 							&.first {
 								animation:
-									fadeIn 400ms ease-in 400ms forwards,
-									slideIn 1s ease 400ms forwards;
+									fadeIn 400ms ease-in 200ms forwards,
+									slideUp 1s ease 200ms forwards;
 							}
 							
 							&.second {
 								animation:
-									fadeIn 400ms ease-in 600ms forwards,
-									slideIn 1s ease 600ms forwards;
+									fadeIn 400ms ease-in 400ms forwards,
+									slideUp 1s ease 400ms forwards;
 							}
 
 							&.third {
 								animation:
-									fadeIn 400ms ease-in 800ms forwards,
-									slideIn 1s ease 800ms forwards;
+									fadeIn 400ms ease-in 600ms forwards,
+									slideUp 1s ease 600ms forwards;
 							}
 
-							.dish-name {
-								font-size: 18px;
-								font-weight: 500;
-							}
+							.wrapper {
+								width: calc(100% + 72px);
+								margin: 12px;
+								white-space: nowrap;
+								overflow: hidden;
 
-							.dish-info {
-								display: flex;
-								justify-content: space-between;
-								font-size: 90%;
-
-								.garnish {
-									font-weight: 300;
-									text-overflow: ellipsis;
+								.dish-name {
+									width: 100%;
+									font-size: 18px;
+									font-weight: 500;
 									white-space: nowrap;
 									overflow: hidden;
+									text-overflow: ellipsis;
 								}
-								
-								.price {
-									font-weight: 500;
+	
+								.dish-info {
+									display: flex;
+									justify-content: space-between;
+									font-size: 90%;
+	
+									.garnish {
+										font-weight: 300;
+										text-overflow: ellipsis;
+										white-space: nowrap;
+										overflow: hidden;
+										padding-right: 6px;
+									}
+									
+									.price {
+										font-weight: 500;
+									}
 								}
+							}
+
+							.validate {
+								background-color: $color-tertiary;
+								height: 100%;
+								padding: 24px;
+								font-size: 24px;
+								color: white;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								animation: slideRight 400ms ease 0ms both;
+							}
+						}
+						
+						.result-card:hover {
+							.validate {
+								transform: translateX(72px);
+								animation: slideLeft 400ms ease 0ms both;
+							}
+
+							.validate > * {
+								animation: rotate 400ms ease 0ms forwards;
 							}
 						}
 
@@ -323,9 +361,36 @@ html {
 							}
 						  }
 						  
-						@keyframes slideIn {
+						@keyframes slideUp {
 							100% {
 								transform: translateY(0);
+							}
+						}
+						
+						@keyframes slideLeft {
+							100% {
+								transform: translateX(0);
+							}
+						}
+
+						@keyframes slideRight {
+							100% {
+								transform: translateX(72px);
+							}
+						}
+
+						// @keyframes reduce {
+						// 	100% {
+						// 		transform: scaleX(.8);
+						// 	}
+						// }
+
+						@keyframes rotate {
+							from {
+								transform: rotate(1deg); 
+							}
+							to {
+								transform: rotate(360deg); 
 							}
 						}
 					}

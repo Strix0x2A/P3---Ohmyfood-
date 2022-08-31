@@ -212,48 +212,98 @@ html body main .restaurant-detail .menu .section .separator {
   background-color: #99E2D0;
 }
 html body main .restaurant-detail .menu .section .result-card {
-  padding: 12px;
+  height: 62px;
   border-radius: 16px;
   margin-bottom: 12px;
   transform: translateY(12px);
   overflow: hidden;
   opacity: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
 html body main .restaurant-detail .menu .section .result-card.first {
-  animation: fadeIn 400ms ease-in 400ms forwards, slideIn 1s ease 400ms forwards;
+  animation: fadeIn 400ms ease-in 200ms forwards, slideUp 1s ease 200ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card.second {
-  animation: fadeIn 400ms ease-in 600ms forwards, slideIn 1s ease 600ms forwards;
+  animation: fadeIn 400ms ease-in 400ms forwards, slideUp 1s ease 400ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card.third {
-  animation: fadeIn 400ms ease-in 800ms forwards, slideIn 1s ease 800ms forwards;
+  animation: fadeIn 400ms ease-in 600ms forwards, slideUp 1s ease 600ms forwards;
 }
-html body main .restaurant-detail .menu .section .result-card .dish-name {
+html body main .restaurant-detail .menu .section .result-card .wrapper {
+  width: calc(100% + 72px);
+  margin: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+html body main .restaurant-detail .menu .section .result-card .wrapper .dish-name {
+  width: 100%;
   font-size: 18px;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-html body main .restaurant-detail .menu .section .result-card .dish-info {
+html body main .restaurant-detail .menu .section .result-card .wrapper .dish-info {
   display: flex;
   justify-content: space-between;
   font-size: 90%;
 }
-html body main .restaurant-detail .menu .section .result-card .dish-info .garnish {
+html body main .restaurant-detail .menu .section .result-card .wrapper .dish-info .garnish {
   font-weight: 300;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding-right: 6px;
 }
-html body main .restaurant-detail .menu .section .result-card .dish-info .price {
+html body main .restaurant-detail .menu .section .result-card .wrapper .dish-info .price {
   font-weight: 500;
+}
+html body main .restaurant-detail .menu .section .result-card .validate {
+  background-color: #99E2D0;
+  height: 100%;
+  padding: 24px;
+  font-size: 24px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideRight 400ms ease 0ms both;
+}
+html body main .restaurant-detail .menu .section .result-card:hover .validate {
+  transform: translateX(72px);
+  animation: slideLeft 400ms ease 0ms both;
+}
+html body main .restaurant-detail .menu .section .result-card:hover .validate > * {
+  animation: rotate 400ms ease 0ms forwards;
 }
 @keyframes fadeIn {
   100% {
     opacity: 1;
   }
 }
-@keyframes slideIn {
+@keyframes slideUp {
   100% {
     transform: translateY(0);
+  }
+}
+@keyframes slideLeft {
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  100% {
+    transform: translateX(72px);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 html body main footer {
