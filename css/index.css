@@ -28,6 +28,8 @@ html body header {
   display: flex;
   align-items: center;
   justify-content: start;
+  z-index: 2;
+  position: relative;
 }
 html body header .logo {
   margin: auto;
@@ -36,6 +38,9 @@ html body header .home .icon {
   font-size: 24px;
   margin-left: 24px;
   margin-right: -48px;
+}
+html body main button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 html body main .content {
   padding: 25px;
@@ -67,11 +72,16 @@ html body main .locator {
   justify-content: center;
   align-items: center;
   font-weight: 500;
+  z-index: 1;
+  position: relative;
+}
+html body main .locator a {
+  display: flex;
+  align-items: center;
 }
 html body main .locator .icons {
-  width: 30px;
-  height: 30px;
-  background: #343434;
+  font-size: 20px;
+  color: #343434;
   margin-right: 15px;
 }
 html body main .catch-phrase {
@@ -91,13 +101,13 @@ html body main .catch-phrase .call-to-action {
   min-height: 60px;
   border-radius: 35px;
   padding: 16px 24px 16px 24px;
-  background-color: #FF79DA;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   color: white;
   font-size: large;
   margin-bottom: 60px;
 }
 html body main .catch-phrase .call-to-action:hover {
-  background-color: #9356DC;
+  background: linear-gradient(170deg, rgba(255, 121, 218, 0.8) 0%, #9356dc 100%);
 }
 html body main .functionning .card {
   height: 50px;
@@ -124,13 +134,14 @@ html body main .functionning .card .order-num {
   background-color: #9356DC;
 }
 html body main .functionning .card .icons {
-  background-color: #636363;
-  height: 30px;
-  width: 30px;
-  margin-right: 15px;
+  color: #636363;
+  font-size: 30px;
+  margin-right: 16px;
+  margin-left: 12px;
 }
 html body main .functionning .card .last {
-  background-color: #9356DC;
+  color: #9356DC;
+  background-color: transparent;
 }
 html body main .functionning .last {
   background-color: rgba(147, 86, 220, 0.1);
@@ -311,12 +322,35 @@ html body main footer {
   color: white;
   width: 100%;
   height: 250px;
+  display: flex;
+  flex-direction: column;
+}
+html body main footer h1 {
+  font-family: Shrikhand;
+  margin-left: 25px;
+}
+html body main footer a {
+  color: white;
+}
+html body main footer a:visited {
+  color: white;
 }
 html body main footer .logo {
   margin: 25px;
 }
 html body main footer .part {
-  margin: 10px 25px;
+  margin: 0px 25px;
+  margin-bottom: 10px;
+}
+html body main footer .with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+html body main footer .with-logo i {
+  width: 20px;
+  margin-right: 4px;
+  text-align: center;
 }
 
 @media screen and (min-width: 1024px) {

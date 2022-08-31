@@ -8,7 +8,11 @@ $color-gray: #eaeaea;
 $color-gray-darker: #636363;
 $color-font: rgba(black, 0.85);
 $color-footer: #343434;
+$gradient-from-top: linear-gradient(170deg, rgba($color-secondary,1) 0%, rgba($color-primary,1) 100%);
+$gradient-from-top-lighter: linear-gradient(170deg, rgba($color-secondary,0.8) 0%, rgba($color-primary,1) 100%);
+$gradient-from-bottom: linear-gradient(170deg, rgba($color-secondary,1) 0%, rgba(147,86,220,1) 100%);
 $shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$shadow-emphasize: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 
 html {
 	font-family: Roboto;
@@ -36,7 +40,7 @@ html {
 	body {
 		margin: 0px;
 		width: 100%;
-		
+		// animation: loader 
 		header {
 			height: 75px;
 			width: 100%;
@@ -44,6 +48,8 @@ html {
 			display: flex;
 			align-items: center;
 			justify-content: start;
+			z-index: 2;
+			position: relative;
 
 			.logo {
 				margin: auto;
@@ -59,6 +65,11 @@ html {
 		}
 				
 		main {
+
+			button:hover {
+				box-shadow: $shadow-emphasize;
+			}
+
 			.content {
 				padding: 25px;
 			}
@@ -87,7 +98,7 @@ html {
 			}
 
 			.result-card:hover {
-				box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+				box-shadow: $shadow-emphasize;
 			}
 
 			.locator {
@@ -96,11 +107,17 @@ html {
 				justify-content: center;
 				align-items: center;
 				font-weight: 500;
+				z-index: 1;
+				position: relative;
+
+				a {
+					display: flex;
+					align-items: center;
+				}
 
 				.icons {
-					width: 30px;
-					height: 30px;
-					background: $color-footer;
+					font-size: 20px;
+					color: $color-footer;
 					margin-right: 15px;
 				}
 			}
@@ -123,14 +140,14 @@ html {
 					min-height: 60px;
 					border-radius: 35px;
 					padding: 16px 24px 16px 24px;
-					background-color: $color-secondary;
+					background: $gradient-from-top;
 					color: white;
 					font-size: large;
 					margin-bottom: 60px;
 				}
 
 				.call-to-action:hover {
-					background-color: $color-primary;
+					background: $gradient-from-top-lighter;
 				}
 			}
 
@@ -161,14 +178,15 @@ html {
 					}
 
 					.icons {
-						background-color: $color-gray-darker;
-						height: 30px;
-						width: 30px;
-						margin-right: 15px;
+						color: $color-gray-darker;
+						font-size: 30px;
+						margin-right: 16px;
+						margin-left: 12px;
 					}
 					
 					.last {
-						background-color: $color-primary;
+						color: $color-primary;
+						background-color: transparent;
 					}
 				}
 
@@ -379,12 +397,6 @@ html {
 							}
 						}
 
-						// @keyframes reduce {
-						// 	100% {
-						// 		transform: scaleX(.8);
-						// 	}
-						// }
-
 						@keyframes rotate {
 							from {
 								transform: rotate(1deg); 
@@ -402,13 +414,41 @@ html {
 				color: white;
 				width: 100%;
 				height: 250px;
+				display: flex;
+				flex-direction: column;
+
+				h1 {
+					font-family: Shrikhand;
+					margin-left: 25px;
+				}
+
+				a {
+					color: white;
+				}
+
+				a:visited {
+					color: white;
+				}
 
 				.logo {
 					margin: 25px;
 				}
 
 				.part {
-					margin: 10px 25px;
+					margin: 0px 25px;
+					margin-bottom: 10px;
+				}
+
+				.with-logo {
+					display: flex;
+					align-items: center;
+					justify-content: start;
+
+					i {
+						width: 20px;
+						margin-right: 4px;
+						text-align: center;
+					}
 				}
 			}
 		}
