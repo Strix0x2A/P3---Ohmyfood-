@@ -234,13 +234,13 @@ html body main .restaurant-detail .menu .section .result-card {
   align-items: center;
 }
 html body main .restaurant-detail .menu .section .result-card.first {
-  animation: fadeIn 400ms ease-in 200ms forwards, slideUp 1s ease 200ms forwards;
+  animation: fadeIn 400ms ease-in 200ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card.second {
-  animation: fadeIn 400ms ease-in 400ms forwards, slideUp 1s ease 400ms forwards;
+  animation: fadeIn 400ms ease-in 400ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card.third {
-  animation: fadeIn 400ms ease-in 600ms forwards, slideUp 1s ease 600ms forwards;
+  animation: fadeIn 400ms ease-in 600ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card .wrapper {
   width: calc(100% + 72px);
@@ -274,17 +274,21 @@ html body main .restaurant-detail .menu .section .result-card .wrapper .dish-inf
 html body main .restaurant-detail .menu .section .result-card .validate {
   background-color: #99E2D0;
   height: 100%;
-  padding: 24px;
-  font-size: 24px;
+  font-size: 0px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px;
+  transition: padding 400ms ease;
   animation: slideRight 400ms ease 0ms both;
 }
 html body main .restaurant-detail .menu .section .result-card:hover .validate {
   transform: translateX(72px);
   animation: slideLeft 400ms ease 0ms both;
+  transition: padding 400ms ease;
+  padding: 24px;
+  font-size: 24px;
 }
 html body main .restaurant-detail .menu .section .result-card:hover .validate > * {
   animation: rotate 400ms ease 0ms forwards;
@@ -292,10 +296,6 @@ html body main .restaurant-detail .menu .section .result-card:hover .validate > 
 @keyframes fadeIn {
   100% {
     opacity: 1;
-  }
-}
-@keyframes slideUp {
-  100% {
     transform: translateY(0);
   }
 }

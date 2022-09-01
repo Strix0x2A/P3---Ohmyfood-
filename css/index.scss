@@ -298,21 +298,15 @@ html {
 							align-items: center;
 							
 							&.first {
-								animation:
-									fadeIn 400ms ease-in 200ms forwards,
-									slideUp 1s ease 200ms forwards;
+								animation: fadeIn 400ms ease-in 200ms forwards;
 							}
 							
 							&.second {
-								animation:
-									fadeIn 400ms ease-in 400ms forwards,
-									slideUp 1s ease 400ms forwards;
+								animation: fadeIn 400ms ease-in 400ms forwards;
 							}
 
 							&.third {
-								animation:
-									fadeIn 400ms ease-in 600ms forwards,
-									slideUp 1s ease 600ms forwards;
+								animation: fadeIn 400ms ease-in 600ms forwards;
 							}
 
 							.wrapper {
@@ -352,12 +346,13 @@ html {
 							.validate {
 								background-color: $color-tertiary;
 								height: 100%;
-								padding: 24px;
-								font-size: 24px;
+								font-size: 0px;
 								color: white;
 								display: flex;
 								justify-content: center;
 								align-items: center;
+								padding: 0px;
+								transition: padding 400ms ease;
 								animation: slideRight 400ms ease 0ms both;
 							}
 						}
@@ -366,6 +361,9 @@ html {
 							.validate {
 								transform: translateX(72px);
 								animation: slideLeft 400ms ease 0ms both;
+								transition: padding 400ms ease;
+								padding: 24px;
+								font-size: 24px;
 							}
 
 							.validate > * {
@@ -375,12 +373,7 @@ html {
 
 						@keyframes fadeIn {
 							100% {
-							  opacity: 1;
-							}
-						  }
-						  
-						@keyframes slideUp {
-							100% {
+								opacity: 1;
 								transform: translateY(0);
 							}
 						}
