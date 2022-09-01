@@ -189,6 +189,9 @@ html body main .restaurants .result-card .wrapper .description .location {
   margin-top: 17px;
   margin-bottom: 7px;
 }
+html body main .restaurant-detail {
+  min-height: calc(100vh - 75px - 250px);
+}
 html body main .restaurant-detail img {
   object-fit: cover;
   width: 100%;

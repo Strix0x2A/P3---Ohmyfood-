@@ -13,6 +13,8 @@ $gradient-from-top-lighter: linear-gradient(170deg, rgba($color-secondary,0.8) 0
 $gradient-from-bottom: linear-gradient(170deg, rgba($color-secondary,1) 0%, rgba(147,86,220,1) 100%);
 $shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 $shadow-emphasize: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+$height-header: 75px;
+$height-footer: 250px;
 
 html {
 	font-family: Roboto;
@@ -42,7 +44,7 @@ html {
 		width: 100%;
 		// animation: loader 
 		header {
-			height: 75px;
+			height: $height-header;
 			width: 100%;
 			box-shadow: $shadow;
 			display: flex;
@@ -249,6 +251,8 @@ html {
 			}
 
 			.restaurant-detail {
+				min-height: calc(100vh - $height-header - $height-footer);
+
 				img {
 					object-fit: cover;
 					width: 100%;
@@ -406,7 +410,7 @@ html {
 				background-color: $color-footer;
 				color: white;
 				width: 100%;
-				height: 250px;
+				height: $height-footer;
 				display: flex;
 				flex-direction: column;
 
