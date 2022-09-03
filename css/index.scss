@@ -57,10 +57,12 @@ html {
 			z-index: 9999;
 			position: fixed;
 			background: $color-primary-lighter;
-			padding-top: 400px;
+			padding-top: 100px;
+			display: block;
+			animation: hideSpinner 400ms linear 3s forwards;
 			
 			& > * {
-				transform: scale(0.25);
+				transform: scale(0.20);
 			}
 			
 			.plate {
@@ -73,21 +75,24 @@ html {
 				margin: auto;
 				display: flex;
 				justify-content: center;
+				align-items: center;
 				box-shadow: rgba($color-primary, 0.4) 10px 10px, rgba($color-primary, 0.3) 20px 20px, rgba($color-primary, 0.2) 30px 30px, rgba($color-primary, 0.1) 40px 40px, rgba($color-primary, 0.05) 50px 50px;
 
 				.spoon {
-					position: relative;
-					border-top: $color-primary 10px solid;
-					height: 250px;
-					width: 250px;
+					position: absolute;
+					animation: rotate 3s linear 0ms infinite;
+					border: rgba($color-secondary, 0.5) 10px;
+					border-style: solid dashed;
+					border-radius: 50%;
+					height: 320px;
+					width: 320px;
 				}
 				
 				.pot {
 					margin: auto;
 					display: flex;
 					justify-content: center;
-					// position: relative;
-					top: 25px;
+					position: absolute;
 					height: 250px;
 					width: 250px;
 					border-radius: 50%;
@@ -96,7 +101,7 @@ html {
 					box-shadow: rgba($color-primary, 0.4) 5px 5px, rgba($color-primary, 0.3) 10px 10px, rgba($color-primary, 0.2) 15px 15px, rgba($color-primary, 0.1) 20px 20px, rgba($color-primary, 0.05) 25px 25px;
 					
 					.spinner {
-						animation: rotate 4s linear 0ms infinite;
+						animation: rotate 3s linear 0ms infinite;
 						
 						.circle {
 							height: 25px;
@@ -117,7 +122,7 @@ html {
 						}
 	
 						.circle:nth-child(3) {
-							animation: circle-3 4s ease alternate infinite;
+							animation: circle-3 3s ease alternate infinite;
 							height: 35px;
 							width: 35px;
 							background: $color-primary;
@@ -570,6 +575,16 @@ html {
 			}
 			to {
 				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes hideSpinner {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+				z-index: -10000;
 			}
 		}
 

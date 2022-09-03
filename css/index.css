@@ -32,10 +32,12 @@ html body .loading-spinner {
   z-index: 9999;
   position: fixed;
   background: rgba(147, 86, 220, 0.1);
-  padding-top: 400px;
+  padding-top: 100px;
+  display: block;
+  animation: hideSpinner 400ms linear 3s forwards;
 }
 html body .loading-spinner > * {
-  transform: scale(0.25);
+  transform: scale(0.2);
 }
 html body .loading-spinner .plate {
   position: relative;
@@ -47,19 +49,23 @@ html body .loading-spinner .plate {
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   box-shadow: rgba(147, 86, 220, 0.4) 10px 10px, rgba(147, 86, 220, 0.3) 20px 20px, rgba(147, 86, 220, 0.2) 30px 30px, rgba(147, 86, 220, 0.1) 40px 40px, rgba(147, 86, 220, 0.05) 50px 50px;
 }
 html body .loading-spinner .plate .spoon {
-  position: relative;
-  border-top: #9356dc 10px solid;
-  height: 250px;
-  width: 250px;
+  position: absolute;
+  animation: rotate 3s linear 0ms infinite;
+  border: rgba(255, 121, 218, 0.5) 10px;
+  border-style: solid dashed;
+  border-radius: 50%;
+  height: 320px;
+  width: 320px;
 }
 html body .loading-spinner .plate .pot {
   margin: auto;
   display: flex;
   justify-content: center;
-  top: 25px;
+  position: absolute;
   height: 250px;
   width: 250px;
   border-radius: 50%;
@@ -68,7 +74,7 @@ html body .loading-spinner .plate .pot {
   box-shadow: rgba(147, 86, 220, 0.4) 5px 5px, rgba(147, 86, 220, 0.3) 10px 10px, rgba(147, 86, 220, 0.2) 15px 15px, rgba(147, 86, 220, 0.1) 20px 20px, rgba(147, 86, 220, 0.05) 25px 25px;
 }
 html body .loading-spinner .plate .pot .spinner {
-  animation: rotate 4s linear 0ms infinite;
+  animation: rotate 3s linear 0ms infinite;
 }
 html body .loading-spinner .plate .pot .spinner .circle {
   height: 25px;
@@ -86,7 +92,7 @@ html body .loading-spinner .plate .pot .spinner .circle:nth-child(2) {
   width: 30px;
 }
 html body .loading-spinner .plate .pot .spinner .circle:nth-child(3) {
-  animation: circle-3 4s ease alternate infinite;
+  animation: circle-3 3s ease alternate infinite;
   height: 35px;
   width: 35px;
   background: #9356dc;
@@ -456,6 +462,15 @@ html body main footer .with-logo i {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes hideSpinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -10000;
   }
 }
 @keyframes circle-1 {
