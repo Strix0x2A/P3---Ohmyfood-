@@ -46,17 +46,33 @@ html body main .content {
   padding: 25px;
 }
 html body main .favorite-action {
-  border: solid 2px #FF79DA;
-  background-color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
+  font-size: 30px;
+  position: relative;
 }
-html body main .favorite-action:hover {
-  background-color: #FF79DA;
+html body main .favorite-action .abs {
+  position: absolute;
+  left: -25px;
 }
-html body main .favorite {
-  background-color: #FF79DA;
+html body main .favorite-action .filled {
+  transform: scale(0);
+  transition: transform 400ms ease-in-out;
+  background: linear-gradient(45deg, #ff79da 0%, rgb(147, 86, 220) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html body main .favorite-action:hover .filled {
+  transform: scale(1);
+  transition: transform 400ms ease-in-out;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html body main .favorite-action.favorite .filled {
+  transform: scale(1);
+  transition: transform 400ms ease-in-out;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 html body main .card {
   background-color: white;
@@ -105,9 +121,13 @@ html body main .catch-phrase .call-to-action {
   color: white;
   font-size: large;
   margin-bottom: 60px;
+  transform: scale(1);
+  transition: all 400ms ease-out;
 }
 html body main .catch-phrase .call-to-action:hover {
   background: linear-gradient(170deg, rgba(255, 121, 218, 0.8) 0%, #9356dc 100%);
+  transform: scale(1.1);
+  transition: all 400ms ease-in;
 }
 html body main .functionning .card {
   height: 50px;
@@ -237,13 +257,16 @@ html body main .restaurant-detail .menu .section .result-card {
   align-items: center;
 }
 html body main .restaurant-detail .menu .section .result-card.first {
-  animation: fadeIn 400ms ease-in 200ms forwards;
+  animation: appearFromBottom 400ms ease-in 200ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card.second {
-  animation: fadeIn 400ms ease-in 400ms forwards;
+  animation: appearFromBottom 400ms ease-in 400ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card.third {
-  animation: fadeIn 400ms ease-in 600ms forwards;
+  animation: appearFromBottom 400ms ease-in 600ms forwards;
+}
+html body main .restaurant-detail .menu .section .result-card.fourth {
+  animation: appearFromBottom 400ms ease-in 800ms forwards;
 }
 html body main .restaurant-detail .menu .section .result-card .wrapper {
   width: calc(100% + 72px);
@@ -296,30 +319,6 @@ html body main .restaurant-detail .menu .section .result-card:hover .validate {
 html body main .restaurant-detail .menu .section .result-card:hover .validate > * {
   animation: rotate 400ms ease 0ms forwards;
 }
-@keyframes fadeIn {
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slideLeft {
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideRight {
-  100% {
-    transform: translateX(72px);
-  }
-}
-@keyframes rotate {
-  from {
-    transform: rotate(1deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 html body main footer {
   background-color: #343434;
   color: white;
@@ -354,6 +353,38 @@ html body main footer .with-logo i {
   width: 20px;
   margin-right: 4px;
   text-align: center;
+}
+@keyframes appearFromBottom {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideLeft {
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  100% {
+    transform: translateX(72px);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(1deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fillFromBottom {
+  from {
+    background: white;
+  }
+  to {
+    background: linear-gradient(45deg, #ff79da 0%, rgb(147, 86, 220) 100%);
+  }
 }
 
 @media screen and (min-width: 1024px) {

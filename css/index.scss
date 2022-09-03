@@ -10,9 +10,15 @@ $color-font: rgba(black, 0.85);
 $color-footer: #343434;
 $gradient-from-top: linear-gradient(170deg, rgba($color-secondary,1) 0%, rgba($color-primary,1) 100%);
 $gradient-from-top-lighter: linear-gradient(170deg, rgba($color-secondary,0.8) 0%, rgba($color-primary,1) 100%);
-$gradient-from-bottom: linear-gradient(170deg, rgba($color-secondary,1) 0%, rgba(147,86,220,1) 100%);
+$gradient-from-bottom: linear-gradient(45deg, rgba($color-secondary,1) 0%, rgba(147,86,220,1) 100%);
+// $gradient-from-bottom: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
+
+$transition-len: .5s;
+$transition-bezier: 1.000, 0.000, 0.000, 1.000;
+
 $shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 $shadow-emphasize: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
 $height-header: 75px;
 $height-footer: 250px;
 
@@ -76,21 +82,42 @@ html {
 				padding: 25px;
 			}
 
-			.favorite-action {
-				border: solid 2px $color-secondary;
-				background-color: white;
-				width: 20px;
-				height: 20px;
-				border-radius: 100%;
-
-				&:hover {
-					background-color: $color-secondary;
+			.favorite-action {	
+				font-size: 30px;
+				position: relative;
+				
+				.abs {
+					position: absolute;
+					left: -25px;
 				}
 
-			}
-
-			.favorite {
-				background-color: $color-secondary;
+				.filled {
+					transform: scale(0);
+					transition: transform 400ms ease-in-out;
+					background: $gradient-from-bottom;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+				
+				&:hover {
+					.filled {
+						transform: scale(1);
+						transition: transform 400ms ease-in-out;
+						background: $gradient-from-top;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+				
+				&.favorite {
+					.filled {
+						transform: scale(1);
+						transition: transform 400ms ease-in-out;
+						background: $gradient-from-top;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
 			}
 
 			.card {
@@ -146,10 +173,14 @@ html {
 					color: white;
 					font-size: large;
 					margin-bottom: 60px;
+					transform: scale(1);
+					transition: all 400ms ease-out;
 				}
 
 				.call-to-action:hover {
 					background: $gradient-from-top-lighter;
+					transform: scale(1.1);
+					transition: all 400ms ease-in;
 				}
 			}
 
@@ -302,15 +333,19 @@ html {
 							align-items: center;
 							
 							&.first {
-								animation: fadeIn 400ms ease-in 200ms forwards;
+								animation: appearFromBottom 400ms ease-in 200ms forwards;
 							}
 							
 							&.second {
-								animation: fadeIn 400ms ease-in 400ms forwards;
+								animation: appearFromBottom 400ms ease-in 400ms forwards;
 							}
 
 							&.third {
-								animation: fadeIn 400ms ease-in 600ms forwards;
+								animation: appearFromBottom 400ms ease-in 600ms forwards;
+							}
+
+							&.fourth {
+								animation: appearFromBottom 400ms ease-in 800ms forwards;
 							}
 
 							.wrapper {
@@ -375,37 +410,10 @@ html {
 							}
 						}
 
-						@keyframes fadeIn {
-							100% {
-								opacity: 1;
-								transform: translateY(0);
-							}
-						}
-						
-						@keyframes slideLeft {
-							100% {
-								transform: translateX(0);
-							}
-						}
-
-						@keyframes slideRight {
-							100% {
-								transform: translateX(72px);
-							}
-						}
-
-						@keyframes rotate {
-							from {
-								transform: rotate(1deg); 
-							}
-							to {
-								transform: rotate(360deg); 
-							}
-						}
 					}
 				}
 			}
-
+			
 			footer {
 				background-color: $color-footer;
 				color: white;
@@ -413,7 +421,7 @@ html {
 				height: $height-footer;
 				display: flex;
 				flex-direction: column;
-
+				
 				h1 {
 					font-family: Shrikhand;
 					margin-left: 25px;
@@ -422,30 +430,68 @@ html {
 				a {
 					color: white;
 				}
-
+				
 				a:visited {
 					color: white;
 				}
-
+				
 				.logo {
 					margin: 25px;
 				}
-
+				
 				.part {
 					margin: 0px 25px;
 					margin-bottom: 10px;
 				}
-
+				
 				.with-logo {
 					display: flex;
 					align-items: center;
 					justify-content: start;
-
+					
 					i {
 						width: 20px;
 						margin-right: 4px;
 						text-align: center;
 					}
+				}
+			}
+
+			@keyframes appearFromBottom {
+				100% {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			
+			@keyframes slideLeft {
+				100% {
+					transform: translateX(0);
+				}
+			}
+		
+			@keyframes slideRight {
+				100% {
+					transform: translateX(72px);
+				}
+			}
+		
+			@keyframes rotate {
+				from {
+					transform: rotate(1deg); 
+				}
+				to {
+					transform: rotate(360deg); 
+				}
+			}
+
+			@keyframes fillFromBottom {
+				from {
+					background: white;
+				}
+
+				to {
+					background: $gradient-from-bottom;
 				}
 			}
 		}
