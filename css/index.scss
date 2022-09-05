@@ -58,90 +58,201 @@ html {
 			position: fixed;
 			background: $color-primary-lighter;
 			padding-top: 100px;
-			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
 			animation: hideSpinner 400ms linear 3s forwards;
 			
 			& > * {
 				transform: scale(0.20);
 			}
-			
-			.plate {
-				position: relative;
-				background: white;
-				border: $color-primary 5px solid;
-				height: 400px;
-				width: 400px;
-				border-radius: 50%;
-				margin: auto;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				box-shadow: rgba($color-primary, 0.4) 10px 10px, rgba($color-primary, 0.3) 20px 20px, rgba($color-primary, 0.2) 30px 30px, rgba($color-primary, 0.1) 40px 40px, rgba($color-primary, 0.05) 50px 50px;
 
-				.spoon {
-					position: absolute;
-					animation: rotate 3s linear 0ms infinite;
-					border: rgba($color-secondary, 0.5) 10px;
-					border-style: solid dashed;
-					border-radius: 50%;
-					height: 320px;
-					width: 320px;
+			.spinner-wrapper {
+				display: flex;
+				align-items: center;
+				
+				& > .fork, & > .knife {
+					transform: scale(0.6);
+				}
+	
+				.drawing {
+					background-color: $color-primary;
+				}
+	
+				.handle {
+					height: 350px;
+					width: 20px;
+					border-radius: 5px;
 				}
 				
-				.pot {
-					margin: auto;
+				.fork {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin-top: 80px;
+	
+					.tines {
+						width: 160px;
+						display: flex;
+						justify-content: space-between;
+	
+						.tine {
+							height: 80px;
+							width: 20px;
+							border-radius: 5px;
+							background-color: $color-secondary;
+						}
+		
+						.left {
+							transform: rotate(8deg);
+						}
+						
+						.middle {
+							margin-top: 30px;
+							height: 50px;
+						}
+						
+						.right {
+							transform: rotate(-8deg);
+						}	
+					}
+	
+					.bottom {
+						position: relative;
+						top: -50px;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+	
+						.arc {
+							z-index: 3;
+							height: 140px;
+							border-radius: 100%;
+							width: 140px;
+							border: transparent 20px solid;
+							transform: rotate(45deg);
+							border-bottom-color: $color-primary;
+							border-right-color: $color-primary;
+						}
+					}
+	
+					.handle {
+						position: relative;
+						top: -70px;
+					}
+				}
+				
+				.plate {
+					margin: 0 70px;
+					position: relative;
+					background: white;
+					border: $color-primary 5px solid;
+					height: 400px;
+					width: 400px;
+					border-radius: 50%;
 					display: flex;
 					justify-content: center;
-					position: absolute;
-					height: 250px;
-					width: 250px;
-					border-radius: 50%;
-					border: $color-primary 10px solid;
-					background: radial-gradient(circle, rgba($color-primary,1) 0%, rgba($color-primary, 0.7) 80%, rgba(#9356ff, 1) 100%);
-					box-shadow: rgba($color-primary, 0.4) 5px 5px, rgba($color-primary, 0.3) 10px 10px, rgba($color-primary, 0.2) 15px 15px, rgba($color-primary, 0.1) 20px 20px, rgba($color-primary, 0.05) 25px 25px;
-					
-					.spinner {
+					align-items: center;
+					box-shadow: rgba($color-primary, 0.4) 10px 10px, rgba($color-primary, 0.3) 20px 20px, rgba($color-primary, 0.2) 30px 30px, rgba($color-primary, 0.1) 40px 40px, rgba($color-primary, 0.05) 50px 50px;
+	
+					.spoon {
+						position: absolute;
 						animation: rotate 3s linear 0ms infinite;
+						border: rgba($color-secondary, 0.5) 10px;
+						border-style: solid dashed;
+						border-radius: 50%;
+						height: 320px;
+						width: 320px;
+					}
+					
+					.pot {
+						margin: auto;
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						height: 250px;
+						width: 250px;
+						border-radius: 50%;
+						border: $color-primary 10px solid;
+						background: radial-gradient(circle, rgba($color-primary,1) 0%, rgba($color-primary, 0.7) 80%, rgba(#9356ff, 1) 100%);
+						box-shadow: rgba($color-primary, 0.4) 5px 5px, rgba($color-primary, 0.3) 10px 10px, rgba($color-primary, 0.2) 15px 15px, rgba($color-primary, 0.1) 20px 20px, rgba($color-primary, 0.05) 25px 25px;
 						
-						.circle {
-							height: 25px;
-							width: 25px;
-							border-radius: 50%;
-							background-color: $color-tertiary;
+						.spinner {
+							animation: rotate 3s linear 0ms infinite;
+							
+							.circle {
+								height: 25px;
+								width: 25px;
+								border-radius: 50%;
+								background-color: $color-tertiary;
+							}
+		
+							.circle:nth-child(1) {
+								animation: circle-1 1s ease alternate infinite;
+							}
+		
+							.circle:nth-child(2) {
+								animation: circle-2 2s ease alternate infinite;
+								background: $color-secondary;
+								height: 30px;
+								width: 30px;
+							}
+		
+							.circle:nth-child(3) {
+								animation: circle-3 3s ease alternate infinite;
+								height: 35px;
+								width: 35px;
+								background: $color-primary;
+							}
+		
+							.circle:nth-child(4) {
+								animation: circle-4 2s ease alternate infinite;
+								background: $color-secondary;
+								height: 30px;
+								width: 30px;
+							}
+							
+							.circle:nth-child(5) {
+								animation: circle-5 1s ease alternate-reverse infinite;
+							}
+							
+							.circle:nth-child(6) {
+								animation: circle-6 1.5s ease alternate infinite;
+							}
 						}
+					}
+				}
 	
-						.circle:nth-child(1) {
-							animation: circle-1 1s ease alternate infinite;
-						}
-	
-						.circle:nth-child(2) {
-							animation: circle-2 2s ease alternate infinite;
-							background: $color-secondary;
-							height: 30px;
-							width: 30px;
-						}
-	
-						.circle:nth-child(3) {
-							animation: circle-3 3s ease alternate infinite;
-							height: 35px;
-							width: 35px;
-							background: $color-primary;
-						}
-	
-						.circle:nth-child(4) {
-							animation: circle-4 2s ease alternate infinite;
-							background: $color-secondary;
-							height: 30px;
-							width: 30px;
+				.knife {
+					position: relative;
+					display: flex;
+					
+					.blade {
+						.top {
+							position: relative;
+							height: 400px;
+							transform: rotate(25deg);
+							width: 160px;
+							border-radius: 100%;
+							border: transparent 20px solid;
+							border-left-color: $color-secondary;
 						}
 						
-						.circle:nth-child(5) {
-							animation: circle-5 1s ease alternate-reverse infinite;
+						.bottom {
+							position: relative;
+							top: -100px;
+							right: 30px;
+							width: 100px;
+							height: 20px;
+							background-color: $color-secondary;
 						}
-						
-						.circle:nth-child(6) {
-							animation: circle-6 1.5s ease alternate infinite;
-						}
+					}
+					
+					.handle {
+						position: relative;
+						right: 90px;
+						z-index: 1;
+						margin-top: 200px;
 					}
 				}
 			}
@@ -379,7 +490,6 @@ html {
 				background-color: $color-gray-lighter;
 				
 				img {
-					// position: relative;
 					object-fit: cover;
 					width: 100%;
 					height: 200px;
