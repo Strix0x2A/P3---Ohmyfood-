@@ -198,7 +198,7 @@ html body main .catch-phrase .secondary {
   font-weight: 300;
   margin-bottom: 20px;
 }
-html body main .catch-phrase .call-to-action {
+html body main .call-to-action {
   margin: 30px;
   min-height: 60px;
   border-radius: 35px;
@@ -210,7 +210,7 @@ html body main .catch-phrase .call-to-action {
   transform: scale(1);
   transition: all 400ms ease-out;
 }
-html body main .catch-phrase .call-to-action:hover {
+html body main .call-to-action:hover {
   background: linear-gradient(170deg, rgba(255, 121, 218, 0.8) 0%, #9356dc 100%);
   transform: scale(1.1);
   transition: all 400ms ease-in;
@@ -297,6 +297,7 @@ html body main .restaurants .result-card .wrapper .description .location {
 }
 html body main .restaurant-detail {
   min-height: calc(100vh - 75px - 250px);
+  background-color: #f6f6f6;
 }
 html body main .restaurant-detail img {
   object-fit: cover;
@@ -305,10 +306,11 @@ html body main .restaurant-detail img {
   z-index: 1;
 }
 html body main .restaurant-detail .menu {
-  margin-top: -32px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  background-color: white;
+  position: relative;
+  top: -30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #f6f6f6;
   height: max-content;
   z-index: 2;
 }
@@ -317,9 +319,6 @@ html body main .restaurant-detail .menu .name {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-html body main .restaurant-detail .menu .section {
-  margin-bottom: 36px;
 }
 html body main .restaurant-detail .menu .section .title {
   text-transform: uppercase;
@@ -404,6 +403,17 @@ html body main .restaurant-detail .menu .section .result-card:hover .validate {
 }
 html body main .restaurant-detail .menu .section .result-card:hover .validate > * {
   animation: rotate 400ms ease 0ms forwards;
+}
+html body main .restaurant-detail .menu .order {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+html body main .restaurant-detail .menu .order .call-to-action {
+  margin: auto;
+  width: 200px;
+  margin-top: 24px;
+  margin-bottom: 36px;
 }
 html body main footer {
   background-color: #343434;

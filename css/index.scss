@@ -256,28 +256,28 @@ html {
 					font-size: 130%;
 					font-weight: 300;
 					margin-bottom: 20px;
-				}
+				}	
+			}
 
-				.call-to-action {
-					margin: 30px;
-					min-height: 60px;
-					border-radius: 35px;
-					padding: 16px 24px 16px 24px;
-					background: $gradient-from-top;
-					color: white;
-					font-size: large;
-					margin-bottom: 60px;
-					transform: scale(1);
-					transition: all 400ms ease-out;
-				}
+			.call-to-action {
+				margin: 30px;
+				min-height: 60px;
+				border-radius: 35px;
+				padding: 16px 24px 16px 24px;
+				background: $gradient-from-top;
+				color: white;
+				font-size: large;
+				margin-bottom: 60px;
+				transform: scale(1);
+				transition: all 400ms ease-out;
 
-				.call-to-action:hover {
+				&:hover {
 					background: $gradient-from-top-lighter;
 					transform: scale(1.1);
 					transition: all 400ms ease-in;
 				}
 			}
-
+			
 			.functionning {
 				.card {
 					height: 50px;
@@ -376,19 +376,22 @@ html {
 
 			.restaurant-detail {
 				min-height: calc(100vh - $height-header - $height-footer);
-
+				background-color: $color-gray-lighter;
+				
 				img {
+					// position: relative;
 					object-fit: cover;
 					width: 100%;
 					height: 200px;
 					z-index: 1;
 				}
-
+				
 				.menu {
-					margin-top: -32px;
-					border-top-left-radius: 20px;
-					border-top-right-radius: 20px;
-					background-color: white;
+					position: relative;
+					top: -30px;
+					border-top-left-radius: 30px;
+					border-top-right-radius: 30px;
+					background-color: $color-gray-lighter;
 					height: max-content;
 					z-index: 2;
 
@@ -400,8 +403,6 @@ html {
 					}
 
 					.section {
-						margin-bottom: 36px;
-
 						.title {
 							text-transform: uppercase;
 							margin-bottom: 8px;
@@ -501,6 +502,19 @@ html {
 							.validate > * {
 								animation: rotate 400ms ease 0ms forwards;
 							}
+						}
+					}
+
+					& .order {
+						display: flex;
+						justify-content: center;
+						width: 100%;
+
+						.call-to-action {
+							margin: auto;
+							width: 200px;
+							margin-top: 24px;
+							margin-bottom: 36px;
 						}
 					}
 				}
@@ -688,7 +702,7 @@ html {
 		& .name {
 			flex: 0 0 100%;
 		}
-
+		
 		.section {
 			width: 29%;
 			min-width: 250px;
