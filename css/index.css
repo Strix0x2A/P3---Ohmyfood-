@@ -1,5 +1,5 @@
 html {
-  font-family: Roboto;
+  font-family: Raleway;
   color: rgba(0, 0, 0, 0.85);
   min-width: 320px;
 }
@@ -36,7 +36,7 @@ html body .loading-spinner {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  animation: hideSpinner 400ms linear 3s forwards;
+  animation: hideSpinner 400ms linear 1s forwards;
 }
 html body .loading-spinner > * {
   transform: scale(0.2);

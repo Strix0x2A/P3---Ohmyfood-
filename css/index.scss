@@ -19,7 +19,7 @@ $height-header: 75px;
 $height-footer: 250px;
 
 html {
-	font-family: Roboto;
+	font-family: Raleway;
 	color: $color-font;
 	min-width: 320px;
 
@@ -61,7 +61,7 @@ html {
 			display: flex;
 			justify-content: center;
 			align-items: flex-start;
-			animation: hideSpinner 400ms linear 3s forwards;
+			animation: hideSpinner 400ms linear 1s forwards;
 			
 			& > * {
 				transform: scale(0.20);
