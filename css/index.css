@@ -36,10 +36,7 @@ html body .loading-spinner {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  animation: hideSpinner 400ms linear 1s forwards;
-}
-html body .loading-spinner > * {
-  transform: scale(0.2);
+  animation: hideSpinner 400ms linear 3s forwards;
 }
 html body .loading-spinner .spinner-wrapper {
   display: flex;
@@ -117,7 +114,7 @@ html body .loading-spinner .spinner-wrapper .plate {
   align-items: center;
   box-shadow: rgba(147, 86, 220, 0.4) 10px 10px, rgba(147, 86, 220, 0.3) 20px 20px, rgba(147, 86, 220, 0.2) 30px 30px, rgba(147, 86, 220, 0.1) 40px 40px, rgba(147, 86, 220, 0.05) 50px 50px;
 }
-html body .loading-spinner .spinner-wrapper .plate .spoon {
+html body .loading-spinner .spinner-wrapper .plate .deco {
   position: absolute;
   animation: rotate 3s linear 0ms infinite;
   border: rgba(255, 121, 218, 0.5) 10px;
