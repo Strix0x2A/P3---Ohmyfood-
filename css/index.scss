@@ -63,9 +63,9 @@ html {
 			align-items: flex-start;
 			animation: hideSpinner 400ms linear 3s forwards;
 			
-			// & > * {
-			// 	transform: scale(0.20);
-			// }
+			& > * {
+				transform: scale(0.20);
+			}
 
 			.spinner-wrapper {
 				display: flex;

@@ -38,6 +38,9 @@ html body .loading-spinner {
   align-items: flex-start;
   animation: hideSpinner 400ms linear 3s forwards;
 }
+html body .loading-spinner > * {
+  transform: scale(0.2);
+}
 html body .loading-spinner .spinner-wrapper {
   display: flex;
   align-items: center;
