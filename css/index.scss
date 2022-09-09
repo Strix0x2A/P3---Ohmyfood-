@@ -1,4 +1,4 @@
-$color-primary: #9356dc;
+$color-primary: #9356DC;
 $color-primary-lighter: rgba($color-primary, 0.1);
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
@@ -422,14 +422,14 @@ html {
 						margin-left: 12px;
 					}
 
-					.last {
+					&:hover {
 						color: $color-primary;
-						background-color: transparent;
+						background-color: $color-primary-lighter;
+						
+						.icons {
+							color: $color-primary;
+						}
 					}
-				}
-
-				.last {
-					background-color: $color-primary-lighter;
 				}
 			}
 

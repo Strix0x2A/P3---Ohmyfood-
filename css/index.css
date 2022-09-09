@@ -49,7 +49,7 @@ html body .loading-spinner .spinner-wrapper > .fork, html body .loading-spinner 
   transform: scale(0.6);
 }
 html body .loading-spinner .spinner-wrapper .drawing {
-  background-color: #9356dc;
+  background-color: #9356DC;
 }
 html body .loading-spinner .spinner-wrapper .handle {
   height: 350px;
@@ -97,8 +97,8 @@ html body .loading-spinner .spinner-wrapper .fork .bottom .arc {
   width: 140px;
   border: transparent 20px solid;
   transform: rotate(45deg);
-  border-bottom-color: #9356dc;
-  border-right-color: #9356dc;
+  border-bottom-color: #9356DC;
+  border-right-color: #9356DC;
 }
 html body .loading-spinner .spinner-wrapper .fork .handle {
   position: relative;
@@ -108,7 +108,7 @@ html body .loading-spinner .spinner-wrapper .plate {
   margin: 0 70px;
   position: relative;
   background: white;
-  border: #9356dc 5px solid;
+  border: #9356DC 5px solid;
   height: 400px;
   width: 400px;
   border-radius: 50%;
@@ -134,7 +134,7 @@ html body .loading-spinner .spinner-wrapper .plate .pot {
   height: 250px;
   width: 250px;
   border-radius: 50%;
-  border: #9356dc 10px solid;
+  border: #9356DC 10px solid;
   background: radial-gradient(circle, #9356dc 0%, rgba(147, 86, 220, 0.7) 80%, #9356ff 100%);
   box-shadow: rgba(147, 86, 220, 0.4) 5px 5px, rgba(147, 86, 220, 0.3) 10px 10px, rgba(147, 86, 220, 0.2) 15px 15px, rgba(147, 86, 220, 0.1) 20px 20px, rgba(147, 86, 220, 0.05) 25px 25px;
 }
@@ -160,7 +160,7 @@ html body .loading-spinner .spinner-wrapper .plate .pot .spinner .circle:nth-chi
   animation: circle-3 3s ease alternate infinite;
   height: 35px;
   width: 35px;
-  background: #9356dc;
+  background: #9356DC;
 }
 html body .loading-spinner .spinner-wrapper .plate .pot .spinner .circle:nth-child(4) {
   animation: circle-4 2s ease alternate infinite;
@@ -234,21 +234,21 @@ html body main .favorite-action .abs {
 html body main .favorite-action .filled {
   transform: scale(0);
   transition: transform 400ms ease-in-out;
-  background: linear-gradient(45deg, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(45deg, #ff79da 0%, #9356DC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 html body main .favorite-action:hover .filled {
   transform: scale(1);
   transition: transform 400ms ease-in-out;
-  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(170deg, #ff79da 0%, #9356DC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 html body main .favorite-action.favorite .filled {
   transform: scale(1);
   transition: transform 400ms ease-in-out;
-  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(170deg, #ff79da 0%, #9356DC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -295,7 +295,7 @@ html body main .call-to-action {
   min-height: 60px;
   border-radius: 35px;
   padding: 16px 24px 16px 24px;
-  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(170deg, #ff79da 0%, #9356DC 100%);
   color: white;
   font-size: large;
   margin-bottom: 60px;
@@ -329,7 +329,7 @@ html body main .functionning .card .order-num {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: #9356dc;
+  background-color: #9356DC;
 }
 html body main .functionning .card .icons {
   color: #636363;
@@ -337,12 +337,12 @@ html body main .functionning .card .icons {
   margin-right: 16px;
   margin-left: 12px;
 }
-html body main .functionning .card .last {
-  color: #9356dc;
-  background-color: transparent;
-}
-html body main .functionning .last {
+html body main .functionning .card:hover {
+  color: #9356DC;
   background-color: rgba(147, 86, 220, 0.1);
+}
+html body main .functionning .card:hover .icons {
+  color: #9356DC;
 }
 html body main .restaurants {
   background-color: #f6f6f6;
